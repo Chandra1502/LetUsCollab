@@ -1,0 +1,369 @@
+<html>
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+body {
+ background-color: #ffece6 ;
+ font-family : calibri;
+}
+
+/* Heading */
+.page-header h1 {
+	color : #e67e22;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #e67e22; /* 1 */
+    border-color: #d35400; /* 2 */
+    font-size : 16px;
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #ecf0f1; /* 3 */
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffe6d1; /* 4 */
+}
+
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #ecf0f1; /* 3 */
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffe6d1; /* 4 */
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #ffe6d1; /* 4 */
+    background-color: #d35400; /* 2 */
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #ffe6d1; /* 4 */
+    background-color: #d35400; /* 2 */
+}
+/* Caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffe6d1; /* 4 */
+    border-bottom-color: #ffe6d1; /* 4 */
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #ecf0f1; /* 3 */
+    border-bottom-color: #ecf0f1; /* 3 */
+}
+
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #ffe6d1; /* 4 */
+    border-bottom-color: #ffe6d1; /* 4 */
+}
+
+/* Mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #d35400; /* 2 */
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #d35400; /* 2 */
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1; /* 3 */
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ecf0f1; /* 3 */
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+          color: #ffe6d1; /* 4 */
+    }
+}
+</style>
+
+</head>
+
+<body data-ng-app="myApp">
+
+	<div class="container">
+		<div class="page-header text-center">
+			<h1>Let's Collab&nbsp<small>put heads together</small></h1>
+		</div>
+	</div>
+
+	<!-- <ul class="nav navbar-nav navbar-left" ng-controller="UserController as ctrl">
+		<li class="dropdown">
+			<a ng-click="ctrl.logout()" ng-show="currentUser.user_id"><b>Logout</b>
+			</a> <a href="#/login" ng-hide="currentUser.user_id"><b>Login</b> <span class="caret"></span></a>
+		</li>
+	</ul>
+	
+	<hr>
+
+
+	<ul class="nav nav-pills">
+		<li class="active"><a href="#/">Home</a></li>
+
+		<li><a href="#/aboutUs">About Us</a></li>
+		<li><a href="#/post_job">Job</a></li>
+		<li>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button"
+					data-toggle="dropdown">
+					Job<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#/search_job">Search Job</a></li>
+					<li><a href="#">View Applied Job</a></li>
+					<li><a href="#/postJob">Post New Job</a></li>
+				</ul>
+			</div>
+
+		</li>
+		<li>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button"
+					data-toggle="dropdown">
+					Friend<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#/friend">friends</a></li>
+					<li><a href="#/view_friend">View Friends</a></li>
+					<li><a href="#/list_friend">list Friends</a></li>
+
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button"
+					data-toggle="dropdown">
+					Blog<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+
+
+
+					<li><a href="#/listBlog">List Blog</a></li>
+
+					<li><a href="#/create_blog">Create Blog</a></li>
+
+
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button"
+					data-toggle="dropdown">
+					Sign-Up<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#/register">Register</a></li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="dropdown"><button
+				class="btn btn-primary dropdown-toggle" type="button"
+				data-toggle="dropdown">
+				Events<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="#/create_event">Create Event</a></li>
+				<li class="divider"></li>
+				<li><a href="#/list_event">My Events</a></li>
+			</ul></li>
+
+
+
+		<li class="dropdown"><button
+				class="btn btn-primary dropdown-toggle" type="button"
+				data-toggle="dropdown">
+				Forum<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="#/list_forum">List Forum</li>
+				<li class="divider"></li>
+				<li><a href="#/create_forum">Create Forum</a></li>
+
+			</ul></li>
+
+
+
+		<li>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button"
+					data-toggle="dropdown">
+					Chat-Forum<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#/chat_forum">chat-forum</a></li>
+				</ul>
+			</div>
+		</li>
+
+	</ul>
+
+
+	<hr> -->
+	
+	<div class="container">
+    <nav class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Let's Collab</a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                	<a data-toggle="dropdown" class="dropdown-toggle" href="#">Blog <b class="caret"></b></a>
+                	<ul class="dropdown-menu">
+                        <li><a href="#/listBlog">All Blogs</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/create_blog">Create a Blog</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Forum <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/list_forum">All Forums</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/create_forum">Create a Forum</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Jobs <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/search_job">Search Job</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/postJob">Post new Job</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Events <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/list_event">My Events</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/create_event">Create an Event</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Friends <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/list_friend">All Friends</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#/view_friend">View My Friends</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Chat-Forum <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/chat_forum">chat-forum</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- <form class="navbar-form navbar-left">
+            	<div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+            </form> -->
+            <ul class="nav navbar-nav navbar-right" ng-controller="UserController as ctrl">
+                <li><a href="#/login" ng-hide="currentUser.user_id">Login</a></li>
+                <li><a ng-click="ctrl.logout()" ng-show="currentUser.user_id">Logout</a></li>
+                <li><a href="#/register">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+	<div data-ng-view></div>
+</body>
+
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
+
+<script src="MyApplication.js"></script>
+
+<script src="c_home/HomeController.js"></script>
+<script src="c_user/UserController.js"></script>
+<script src="c_user/UserService.js"></script>
+
+<script src="c_blog/BlogController.js"></script>
+<script src="c_blog/BlogService.js"></script>
+
+
+
+<script src="c_friend/FriendController.js"></script>
+<script src="c_friend/FriendService.js"></script>
+
+<script src="c_friend/RequestController.js"></script>
+<script src="c_friend/RequestService.js"></script>
+
+<script src="c_user/LoginController.js"></script>
+<script src="c_user/LogoutController.js"></script>
+
+
+<script src="c_job/JobController.js"></script>
+<script src="c_job/JobService.js"></script>
+
+<script src="c_event/EventController.js"></script>
+<script src="c_event/EventService.js"></script>
+
+
+<script src="c_forum/ForumController.js"></script>
+<script src="c_forum/ForumService.js"></script>
+
+
+
+
+<script src="c_chat_forum/ChatForumController.js"></script>
+<script src="c_chat_forum/ChatForumService.js"></script>
+
+
+
+</html>

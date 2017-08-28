@@ -1,0 +1,160 @@
+<!-- <style>
+input[type=text], input[type=password] {
+
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+}
+
+img.avatar {
+	width: 40%;
+	border-radius: 50%;
+}
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+</style>
+
+
+<div ng-controller="UserController as ctrl">
+
+	<div ng-show='ctrl.user.errorMessage'>
+		<div class="alert alert-danger fade in">
+			{{ctrl.user.errorMessage}}</div>
+
+	</div>
+	
+
+	<div class="panel panel-default" ng-controller="UserController as ctrl">
+		<div class="panel heading">
+			<span class="lead">SignIn Form</span>
+		</div>
+		<div class="formcontainer">
+			<form ng-submit="ctrl.login()" name="myForm" class="form-horizontal">
+
+
+				<div class="container">
+					<label><b>Email-Id</b></label> <input type="email"
+						placeholder="Enter Emailid" name="emailid"
+						ng-model="ctrl.user.emailid" required> <label><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" name="password"
+						ng-model="ctrl.user.password" required>
+
+					<button type="submit">Login</button>
+
+				</div>
+
+
+			</form>
+
+		</div>
+	</div>
+</div> -->
+
+<style>
+
+/* ->->->->->->->-> Login ->->->->->->->-> */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+</style>
+
+<div ng-controller="UserController as ctrl">
+
+	<div ng-show='ctrl.user.errorMessage'>
+		<div class="alert alert-danger fade in">
+			{{ctrl.user.errorMessage}}
+		</div>
+	</div>
+
+
+<div class="container">
+
+	<form ng-submit="ctrl.login()" name="myForm" class="form-signin">
+		<h2 class="form-signin-heading">Please sign in</h2>
+		<label for="inputEmail" class="sr-only">Email address</label> <input
+			type="email" id="inputEmail" class="form-control"
+			placeholder="Enter your emailid" ng-model="ctrl.user.emailid" required autofocus> <label
+			for="inputPassword" class="sr-only">Password</label> <input
+			type="password" id="inputPassword" class="form-control"
+			placeholder="Enter your password" ng-model="ctrl.user.password" required>
+		<div class="checkbox">
+			<label> <input type="checkbox" value="remember-me">
+				Remember me
+			</label>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+			in</button>
+	</form>
+
+</div> <!-- /container -->
+
+</div>
+
+
+
+
+
+

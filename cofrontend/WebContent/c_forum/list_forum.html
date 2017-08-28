@@ -1,0 +1,8 @@
+<div class="container" ng-controller="ForumController as ctrl">
+<h1><center>Welcome to forums</center></h1>
+<div ng-repeat="forum in ctrl.forums">
+<a href="#/view_forum" ng-click="ctrl.getSelectedForum(forum.forum_id)"><p style="font-size:20px;">Title:{{forum.topic}}</p></a>
+</div>
+</div>
+
+<br/><br/><br/><br/><br/><br/><br/>
